@@ -4,7 +4,6 @@ public class First {
     static void bubbleSort(int[] arr){
         for(int i = 0; i < arr.length - 1; i++){
             boolean swapped = false;
-                                // this is the wall.
             for(int j = 0; j < arr.length - i - 1; j++){
                 if(arr[j] > arr[j + 1]){
                     // swap
@@ -28,19 +27,23 @@ public class First {
         }
         return reversed;
     }
+
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter a list of numbers(separated by space):");
         String input = scanner.nextLine();
 
+        // Split string by space
         String[] tokens = input.split(" ");
 
+        // Parse to int
         int[] numbers = new int[tokens.length];
         for(int i = 0; i < tokens.length; i++){
             numbers[i] = Integer.parseInt(tokens[i]);
         }
 
+        // Sort
         bubbleSort(numbers);
         System.out.print("Smallest to largest: ");
         for (int number : numbers) {
@@ -48,6 +51,7 @@ public class First {
             System.out.print(" ");
         }
 
+        // Reverse the sorted arr
         int[] reversed = reverse(numbers);
         System.out.print("\nLargest to smallest: ");
         for (int number : reversed) {
